@@ -1,46 +1,34 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import UploadFileForm
+from .sample_object import sample_object
 
 FILE_DESTINATION = 'app/uploaded/temp.csv'
-FILE_RELATIVE = "uploaded/temp.csv"
 
-
-# Handles an uploaded 
+# Handles uploading a file for our use later
 def handle_uploaded_file(file):
     with open(FILE_DESTINATION, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
 
-# instead of index.html -- include w/e you want
+# Handles rendering the html page
 def index(request):
     if request.method == 'GET':
         return render(request, 'index.html')
     elif request.method == 'POST':
-        # print(request.FILES)
-        # form = UploadFileForm(request.POST, request.FILES)
+        # Upload the file
         handle_uploaded_file(request.FILES['test'])
-        return render(request, "balls.html")
 
+        # TODO: Process the file using the statistics library
+        # Declare all of the variables we will display
+        mean = median = mode = variance = first_quartile = third_quartile = std_dev = 0
 
-# def process_upload(request):
-#     # Process the file
-#     success = upload_file(request)
-#     if (success):
-#         # process the file
-#     else:
-#         return render(request, 'index.html')
+        # Get the sample data
+        data = sample_object(FILE_DESTINATION)
 
-# # This function handles an upload file request
-# def upload_file(request):
-#     if request.method == 'POST':
-#         form = UploadFileForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             handle_uploaded_file(request.FILES['file'])
-
-#             # This isn't necessary -- just indicates that it was successful
-#             return True
-#         else:
-#             form = UploadFileForm()
-
-#         return False;
+        return render(
+            request, 
+            "balls.html",
+            context={'mean': mean, 'median': median, 'mode': mode, 
+            'variance': variance, 'first_quartile': first_quartile,
+            'third_quartile': third_quartile, 'std_dev': std_dev})
