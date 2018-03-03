@@ -30,7 +30,9 @@ def index(request):
         data.generate_list()
         table = data.point_list
 
-        mean = data.get_mean_column1()
+        mean = data.get_mean()
+        variance = data.get_var()
+        std_dev = data.get_var() ** (1/2)
 
         return render(
             request, 

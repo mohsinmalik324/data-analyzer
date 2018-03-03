@@ -30,27 +30,27 @@
 				</tr>
 				<tr>
 					<td>Median</td>
-					<td>4</td>
+					<td>{{ median }}</td>
 				</tr>
 				<tr>
 					<td>Mode</td>
-					<td>4</td>
+					<td>{{ mode }}</td>
 				</tr>
 				<tr>
 					<td>Variance</td>
-					<td>4</td>
+					<td>{{ variance }}</td>
 				</tr>
 				<tr>
 					<td>First Quartile</td>
-					<td>4</td>
+					<td>{{ first_quartile }}</td>
 				</tr>
 				<tr>
 					<td>Third Quartile</td>
-					<td>4</td>
+					<td>{{ third_quartile }}</td>
 				</tr>
 				<tr>
 					<td>Standard Deviation</td>
-					<td>4</td>
+					<td>{{ std_dev }}</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -58,6 +58,8 @@
 				</tr>
 			</tbody>
 		</table>
+
+		{{ table }}
 
 		{% endblock %}
 	</body>
