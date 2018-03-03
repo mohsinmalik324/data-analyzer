@@ -15,9 +15,9 @@
 	<body>
 		<h1>Data Analyzer</h1>
 		<p>Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p>
-		<form>
+		<form method="POST" enctype="multipart/form-data">{% csrf_token %}
 			<div class="form-group">
-				<input class="form-control-file" type="file" accept=".csv">
+				<input class="form-control-file" type="file" accept=".csv" name="data-file">
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>

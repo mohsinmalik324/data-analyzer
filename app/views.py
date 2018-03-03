@@ -17,7 +17,7 @@ def index(request):
         return render(request, 'index.html')
     elif request.method == 'POST':
         # Upload the file
-        handle_uploaded_file(request.FILES['test'])
+        handle_uploaded_file(request.FILES['data-file'])
 
         # TODO: Process the file using the statistics library
         # Declare all of the variables we will display
