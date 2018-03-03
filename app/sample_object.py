@@ -7,6 +7,13 @@ class sample_object:
         self.csv_file = open(file)
         self.dataframe = pd.DataFrame.from_csv(self.csv_file)
 
+    def generate_list(self):
+        self.point_list = self.dataframe.values.tolist()
+
+    def display_list(self):
+        for i in self.point_list:
+            print(i)
+
     def csv_has_read(file):
         f = open("file", 'r')
         pd.read_csv()
