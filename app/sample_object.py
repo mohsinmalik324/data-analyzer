@@ -11,8 +11,12 @@ class sample_object:
         self.point_list = self.dataframe.values.tolist()
 
     def display_list(self):
+        data_points = []
+
         for i in self.point_list:
-            print(i)
+            data_points.append(i)
+
+        return data_points
 
     def csv_has_read(file):
         f = open("file", 'r')

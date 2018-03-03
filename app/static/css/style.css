@@ -1,0 +1,13 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.body > .container {
+    padding: 100px 10px 0;
+}

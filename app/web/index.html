@@ -4,23 +4,23 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<style>
-			body {
-				margin-top: 10px;
-				margin-left: 15px;
-			}
-		</style>
+		<link rel="stylesheet" href="../static/css/style.css">
 		<title>Data Analyzer</title>
 	</head>
 	<body>
-		<h1>Data Analyzer</h1>
-		<p>Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p>
-		<form method="POST" enctype="multipart/form-data">{% csrf_token %}
-			<div class="form-group">
-				<input class="form-control-file" type="file" accept=".csv" name="data-file">
+
+		<main role="main" class="container">
+			<h1>Data Analyzer</h1>
+			<div class="row">
+				<p class="col-md-8">Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p> <!-- Complicated form -->
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
+			<div class="row">
+				<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+					<input class="form-control-file col-md-8" type="file" accept=".csv" name="data-file">
+					<button type="submit" class="btn btn-primary cold-md-2">Submit</button>
+				</form>
+			</div>
+
 		<!--
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
