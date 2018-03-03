@@ -33,3 +33,18 @@ class sample_object:
 
     def get_mean_column1(self):
         return self.dataframe.mean()
+
+    def get_median_column1(self):
+        return self.dataframe.median()
+
+    def get_quartiles_column1(self):
+        return [self.dataframe.quantile(.25),
+                self.dataframe.quantile(.5),
+                self.dataframe.quantile(.75)]
+
+    def get_var(self):
+        return self.dataframe.var()
+
+    def get_quantile_column1(self, x): # Implement in later builds
+        return self.dataframe.quantile(x)
+
