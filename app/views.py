@@ -34,7 +34,7 @@ def index(request):
 
         return render(
             request, 
-            "balls.html",       # FIXME: Change this 
+            "results.html",       # FIXME: Change this 
             context={'mean': mean, 'median': median, 'mode': mode, 
             'variance': variance, 'first_quartile': first_quartile,
             'third_quartile': third_quartile, 'std_dev': std_dev,

@@ -8,23 +8,28 @@
 		<title>Data Analyzer</title>
 	</head>
 	<body>
-
-		<main role="main" class="container">
-			<h1>Data Analyzer</h1>
-			<div class="row">
-				<p class="col-md-8">Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p> <!-- Complicated form -->
+		<h1>Data Analyzer</h1>
+		<p>Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p>
+		<form action="#" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="form-group">
+				<input class="form-control-file" type="file" accept=".csv" name="data-file">
 			</div>
-			<div class="row form-group">
-				<form method="POST" enctype="multipart/form-data">{% csrf_token %}
-					<input class="form-control-file col-md-8" type="file" accept=".csv" name="data-file">
-					<button type="submit" class="btn btn-primary cold-md-2">Submit</button>
-				</form>
-			</div>
-
-		<!--
+			<button id="submitbtn" onclick="loadingBar();" type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		<div id="loader" hidden></div>
+		<p id="processing" hidden><br>Processing file...</p>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<!--
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		-->
+		<script>
+			function loadingBar() {
+				$("#submitbtn").attr("hidden", "true");
+				$("#loader").removeAttr("hidden");
+				$("#processing").removeAttr("hidden");
+			}
+		</script>
 	</body>
 </html>

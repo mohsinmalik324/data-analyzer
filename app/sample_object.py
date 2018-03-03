@@ -11,12 +11,8 @@ class sample_object:
         self.point_list = self.dataframe.values.tolist()
 
     def display_list(self):
-        data_points = []
-
         for i in self.point_list:
-            data_points.append(i)
-
-        return data_points
+            print(i)
 
     def csv_has_read(file):
         f = open("file", 'r')
@@ -51,4 +47,3 @@ class sample_object:
 
     def get_quantile_column1(self, x): # Implement in later builds
         return self.dataframe.quantile(x)
-
