@@ -14,7 +14,7 @@
 			<div class="row">
 				<p class="col-md-8">Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p> <!-- Complicated form -->
 			</div>
-			<div class="row">
+			<div class="row form-group">
 				<form method="POST" enctype="multipart/form-data">{% csrf_token %}
 					<input class="form-control-file col-md-8" type="file" accept=".csv" name="data-file">
 					<button type="submit" class="btn btn-primary cold-md-2">Submit</button>
