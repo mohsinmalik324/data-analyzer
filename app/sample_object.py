@@ -50,13 +50,17 @@ class sample_object:
     def get_mean(self):
         """Returns the mean(s) obtained from dataframe"""
         S = []
-        for i in range(len(self.dataframe.mean)):
-            S.append(round(i,2))
-        return S
+        for i in range(len(self.dataframe.mean())):
+            S.append(round(self.dataframe.mean()[i],2))
+        return S[0]
+
+    def get_mode(self):
+        return round(self.dataframe.mode()[0],2)
+
 
     def get_median(self):
         """Returns the median(s) obtained from dataframe"""
-        return self.dataframe.median()
+        return round(self.dataframe.median()[0],2)
 
     def get_quartiles(self):
         """Returns the quartiles obtained from dataframe"""
@@ -66,7 +70,7 @@ class sample_object:
 
     def get_var(self):
         """Returns the variance obtained from dataframe"""
-        return self.dataframe.var()
+        return round(self.dataframe.var()[0],2)
 
     def get_quantile_column1(self, x): # Implement in later builds
         return self.dataframe.quantile(x)
