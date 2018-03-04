@@ -13,7 +13,7 @@
 		<form action="#" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			<div class="form-group">
-				<input class="form-control-file" type="file" accept=".csv" name="data-file">
+				<input class="form-control-file" id="file-input" type="file" accept=".csv" name="data-file">
 			</div>
 			<button id="submitbtn" onclick="loadingBar();" type="submit" class="btn btn-primary">Submit</button>
 		</form>
