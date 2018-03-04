@@ -49,7 +49,10 @@ class sample_object:
 
     def get_mean(self):
         """Returns the mean(s) obtained from dataframe"""
-        return self.dataframe.mean()
+        S = []
+        for i in range(len(self.dataframe.mean)):
+            S.append(round(i,2))
+        return S
 
     def get_median(self):
         """Returns the median(s) obtained from dataframe"""
@@ -68,4 +71,7 @@ class sample_object:
     # Implement in later builds
     def get_quantile(self, x):
         return self.dataframe.quantile(x)
+
+    def get_summary(self):
+        return self.dataframe.describe()
 
