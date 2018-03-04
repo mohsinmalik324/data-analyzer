@@ -4,35 +4,16 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<style>
-			body {
-				margin-top: 10px;
-				margin-left: 15px;
-			}
-
-			#loader {
-				border: 16px solid #f3f3f3; /* Light grey */
-				border-top: 16px solid #3498db; /* Blue */
-				border-radius: 50%;
-				width: 120px;
-				height: 120px;
-				animation: spin 2s linear infinite;
-				margin-top: 30px;
-			}
-
-			@keyframes spin {
-				0% { transform: rotate(0deg); }
-				100% { transform: rotate(360deg); }
-			}
-		</style>
+		<link rel="stylesheet" href="../static/css/style.css">
 		<title>Data Analyzer</title>
 	</head>
 	<body>
 		<h1>Data Analyzer</h1>
 		<p>Upload a .CSV (comma-seperated values) file below and receive statistical analysis.</p>
-		<form action="#">
+		<form action="#" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
 			<div class="form-group">
-				<input class="form-control-file" type="file" accept=".csv">
+				<input class="form-control-file" type="file" accept=".csv" name="data-file">
 			</div>
 			<button id="submitbtn" onclick="loadingBar();" type="submit" class="btn btn-primary">Submit</button>
 		</form>

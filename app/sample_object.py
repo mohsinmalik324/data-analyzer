@@ -68,8 +68,7 @@ class sample_object:
         """Returns the variance obtained from dataframe"""
         return self.dataframe.var()
 
-    # Implement in later builds
-    def get_quantile(self, x):
+    def get_quantile_column1(self, x): # Implement in later builds
         return self.dataframe.quantile(x)
 
     def get_summary(self):

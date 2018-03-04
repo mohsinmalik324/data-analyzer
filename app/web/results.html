@@ -11,7 +11,7 @@
 				margin-bottom: 15px;
 			}
 
-			#table {
+			.table {
 				width: 30%;
 				margin: auto;
 			}
@@ -19,36 +19,39 @@
 		<title>Data Analyzer</title>
 	</head>
 	<body>
+		{% block content %}
+
+		<div class="container">
 		<h1>Results</h1>
-		<table id="table" class="table">
+		<table class="table" class="table">
 			<tbody>
 				<tr>
 					<td>Mean</td>
-					<td>5.67</td>
+					<td>{{ mean }}</td>
 				</tr>
 				<tr>
 					<td>Median</td>
-					<td>4</td>
+					<td>{{ median }}</td>
 				</tr>
 				<tr>
 					<td>Mode</td>
-					<td>4</td>
+					<td>{{ mode }}</td>
 				</tr>
 				<tr>
 					<td>Variance</td>
-					<td>4</td>
+					<td>{{ variance }}</td>
 				</tr>
 				<tr>
 					<td>First Quartile</td>
-					<td>4</td>
+					<td>{{ first_quartile }}</td>
 				</tr>
 				<tr>
 					<td>Third Quartile</td>
-					<td>4</td>
+					<td>{{ third_quartile }}</td>
 				</tr>
 				<tr>
 					<td>Standard Deviation</td>
-					<td>4</td>
+					<td>{{ std_dev }}</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -56,6 +59,11 @@
 				</tr>
 			</tbody>
 		</table>
+
+		{{ data_table | safe }}
+		</div>
+
+		{% endblock %}
 	</body>
 </html>
 
