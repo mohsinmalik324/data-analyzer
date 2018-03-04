@@ -1,15 +1,17 @@
-html {
-    position: relative;
-    min-height: 100%;
-}
-
 body {
-    margin-top: 10px;
-    margin-left: 15px;
+    width: 50%;
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
+	/*border: solid;
+	border-color: black;*/
 }
 
-.body > .container {
-    padding: 100px 10px 0;
+#file-input {
+	/*border: solid;
+	border-color: black;*/
+	width: 25%;
+	margin: auto;
 }
 
 #loader {
